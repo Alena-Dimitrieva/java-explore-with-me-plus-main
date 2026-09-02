@@ -1,0 +1,34 @@
+server.port: 8080
+
+app.name: ewm-main-service
+
+spring:
+  sql.init:
+    mode: ALWAYS
+    schema-locations: classpath:schema-postgres.sql
+  main.banner-mode: OFF
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ewm-main
+    username: dbuser
+    password: 12345
+  jpa:
+    generate-ddl: false
+    hibernate.ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+logging:
+  level:
+    root: info
+    org:
+      zalando:
+        logbook: trace
+
+stats-server:
+  url: ${STATS_SERVER_URL:http://stats-server:9090}

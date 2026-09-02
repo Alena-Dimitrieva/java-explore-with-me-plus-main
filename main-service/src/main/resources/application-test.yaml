@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      schema-locations: classpath:schema-h2.sql
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:ewm-main
+
+stats-server:
+  url: ${STATS_SERVER_URL:http://localhost:9090}
