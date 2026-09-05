@@ -1,5 +1,3 @@
-server.port: 8080
-
 app.name: ewm-main-service
 
 spring:
@@ -9,7 +7,7 @@ spring:
   main.banner-mode: OFF
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/ewm-main
+    url: jdbc:postgresql://localhost:6541/ewm-main
     username: dbuser
     password: 12345
   jpa:
@@ -29,6 +27,3 @@ logging:
     org:
       zalando:
         logbook: trace
-
-stats-server:
-  url: ${STATS_SERVER_URL:http://stats-server:9090}

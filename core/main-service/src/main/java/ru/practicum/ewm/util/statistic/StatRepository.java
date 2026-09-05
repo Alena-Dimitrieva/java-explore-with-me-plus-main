@@ -23,7 +23,7 @@ public class StatRepository {
 	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 	private final LocalDateTime startUnixEpoch = LocalDateTime.parse("1970-01-01T00:00:00");
 
-	@Value("${app.name}")
+	@Value("${app.name:ewm-main-service}")
 	private String appName;
 
 	private final StatClient statClient;
